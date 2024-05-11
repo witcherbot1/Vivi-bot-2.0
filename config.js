@@ -7,17 +7,17 @@ import fetch from 'node-fetch';
 import axios from 'axios';
 import moment from 'moment-timezone';
 
-global.botnumber = "96555480132"
+global.botnumber = "96560339273"
 global.confirmCode = ""
 
 global.owner = [
-  ['96551048712', '👑 Bobo - Creador 👑', true],
-  ['96555480132'],
-  ['96555480132']
+  ['96560339273', '👑 Bobo - Creador 👑', true],
+  ['96560339273'],
+  ['96560339273']
 ];
 
 global.suittag = ['5219993404349'];
-global.prems = ['96555480132'];
+global.prems = ['96560339273'];
 
 global.packname = 'مملكة بيرل⭐للانمي(@kdmpearl)';
 global.author = '𝐕𝐢𝐯𝐢 2.0';
