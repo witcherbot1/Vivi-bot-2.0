@@ -13,8 +13,6 @@ export default handler
 global.gensin = [
   "https://i.pinimg.com/originals/4a/fe/31/4afe31b113d6dcfdcd1ebe2783b57421.jpg",
   "https://i.pinimg.com/originals/60/65/46/606546c802d8b8e995cd69861a095f8c.jpg",
-  "https://i.pinimg.com/originals/ee/91/3c/ee913c0b8d4e2b5d704bac983285c800.jpg://tinyurl.com/2z652cknom/2z652ckn",
-  "https://i.pinimg.com/originals/c4/0f/20/c40f20d9a190f7ef8cad519e4edf7739.png",
   "https://i.pinimg.com/originals/5e/e7/0b/5ee70bf297995d67700299ea678ea22f.jpg",
     "https://i.pinimg.com/originals/67/10/bc/6710bc7e322e45013ec0b420d27bbb70.jpg",
     "https://i.pinimg.com/originals/ba/2d/3e/ba2d3e3fd64e0ce1b4177df63fee6603.jpg",
