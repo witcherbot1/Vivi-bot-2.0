@@ -1479,9 +1479,9 @@
             ]
         },
         "game__cancion": {
-            "texto1": "El juego ha terminado",
-            "texto2": "❌Incorrecto!",
-            "texto3": "ADIVINA EL TITULO DE LA CANCION"
+            "texto1": "*[❗] انتهت اللعبة.*",
+            "texto2": "*[❌] غير صحيح!*",
+            "texto3": "تخمين الشخصية من الصوت"
         },
         "game__suitpvp": {
             "texto1": "𝚁𝙴𝙲𝙷𝙰𝚉𝙾 𝙴𝙻 𝙿𝚅𝙿, 𝙴𝙻 𝙹𝚄𝙴𝙶𝙾 𝚂𝙴 𝙲𝙰𝙽𝙲𝙴𝙻𝙰*",
@@ -1786,17 +1786,17 @@
             "texto6": "*[❗] 𝙴𝚁𝚁𝙾𝚁, 𝙸𝙽𝚃𝙴𝙽𝚃𝙰𝙻𝙾 𝙼𝙰𝚂 𝚃𝙰𝚁𝙳𝙴*"
         },
         "game_cancion": {
-            "texto1": "Todavía hay canciones sin respuesta en este chat.",
+            "texto1": "*[ℹ️] لا تزال هناك الغاز بدون إجابة في هذه المحادثة.*",
             "texto2": [
-                "ADIVINA EL TITULO DE LA CANCION",
-                "Tiempo",
-                "segundos",
-                "Escribe",
-                "Para obtener una pista",
-                "Premio:",
-                "RESPONDE A ESTE MENSAJE CON LAS RESPUESTAS!"
+                "◉ تخمين الشخصية من الصوت",
+                "◄ الوقت :",
+                "ثانية",
+                "◄ اكتب :",
+                "للحصول على تلميح",
+                "◄ الجائزة :",
+                "◄ الرد على هذه الرسالة مع الاجابة!"
             ],
-            "texto3": "Se acabó el tiempo!\nLa respuesta es"
+            "texto3": "[❗] *انتهى الوقت!*\n◄ الإجابة هي :"
         },
         "game_delttt": {
             "texto1": "*[❗] 𝙽𝙾 𝙴𝚂𝚃𝙰𝚂 𝙴𝙽 𝙽𝙸𝙽𝙶𝚄𝙽𝙰 𝙿𝙰𝚁𝚃𝙸𝙳𝙰 𝙳𝙴 𝚃𝚁𝙴𝚂 𝙴𝙽 𝚁𝙰𝚈𝙰*",
