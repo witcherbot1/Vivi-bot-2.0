@@ -4,46 +4,34 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         message: {
           interactiveMessage: {
             header: {
-              title: ' *╮━━━⬣  قـائـمـة الـاوامــر  ⬣━━━╭*'
+              title: '*قـائـمـة الـاوامــر*'
             },
             body: {
-              text: '  ❖ افتح القائمة لاختيار المحتوى الذي\nتريده من خلال الضغط على الزر ادناه ☟\n *╯━━━━━━━⬣ ❈ ⬣━━━━━━━╰*'
+              text: '🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة'
             },
             nativeFlowMessage: {
               buttons: [
                 {
                   name: 'single_select',
                   buttonParamsJson: JSON.stringify({
-                    title: 'اضـغـط هـنـا ➥',
+                    title: 'دوس هنا ',
                     sections: [
                       {
-                        title: '▣ قـوائـم الـبـوت',
-                        highlight_label: '☚',
+                        title: 'قوائم البوت',
+                        highlight_label: 'اختار',
                         rows: [
                           {
-                            header: '# قـسـم الـمـطـور ⍅',
-                            title: '.مطور',
-                            description: 'خاص لصاحب البوت',
-                            id: 'te'
-                          },
-                          {
-                            header: '# قـسـم الـانـمـي ⍅',
-                            title: '.انمي',
+                            header: 'قسم الانمي',
+                            title: '.الانمي',
                             description: '',
-                            id: 'te'
+                            id: '.اذكار الصباح'
                           },
                           {
-                            header: '# قـسـم الـالـعـاب ⍅',
-                            title: '.العاب',
-                            description: '',
-                            id: 'te'
-                          },
-                          {
-                            header: '# قـسـم الـديـن ⍅',
+                            header: 'قسم الاوامر',
                             title: 'اذكار المساء',
                             description: '',
-                            id: 'te'
-                          },
+                            id: '.اذكار المساء'
+                          }
                         ]
                       }
                     ]
@@ -61,6 +49,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
 handler.help = ['info']
 handler.tags = ['main']
-handler.command = ['اوامر']
+handler.command = ['قايمه']
 
 export default handler
