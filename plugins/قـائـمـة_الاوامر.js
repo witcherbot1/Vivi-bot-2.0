@@ -42,7 +42,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                             header: '# قـسـم الـتـرفـيـه ⍅',
                             title: '.ترفيه',
                             description: '',
-                            id: '.العاب'
+                            id: '.ترفيه'
                           },
                           {
                             header: '# قـسـم الـديـن ⍅',
