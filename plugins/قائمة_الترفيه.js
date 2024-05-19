@@ -20,7 +20,7 @@ let handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPr
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `[✳️]لم يتم العثور على المستخدم في قاعدة* البيانات الخاصة بي*`
 
-  await conn.sendMessage(m.chat, { react: { text: '📑', key: m.key } })
+  await conn.sendMessage(m.chat, { react: { text: '🎮', key: m.key } })
   
 let videoUrl = 'https://telegra.ph/file/6b14edb82a05e5ac27946.mp4';
   let vn = './media/menu.mp3';
