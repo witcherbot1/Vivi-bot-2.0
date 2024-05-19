@@ -39,5 +39,5 @@ ${tradutor.texto2[1]} ${poin}+ Exp
 };
 handler.help = ['acertijo'];
 handler.tags = ['game'];
-handler.command = /^(حزر|acert|pregunta|adivinanza|tekateki)$/i;
+handler.command = /^(احزر|acert|pregunta|adivinanza|tekateki)$/i;
 export default handler;
