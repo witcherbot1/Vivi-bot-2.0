@@ -21,5 +21,5 @@ const handler = async (m, {conn, usedPrefix, command}) => {
 };
 handler.help = ['tovn (reply)'];
 handler.tags = ['audio'];
-handler.command = /^تحويل(فويس|(ptt)?)$/i;
+handler.command = /^لفويس$/i;
 export default handler;
