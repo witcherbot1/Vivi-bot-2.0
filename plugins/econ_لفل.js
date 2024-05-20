@@ -29,7 +29,6 @@ ${tradutor.texto1[5]} ${max - user.exp} ${tradutor.texto1[6]}`.trim();
     const levelUpMessage = `${tradutor.texto2[0]} ${name}! ${tradutor.texto2[1]} ${user.level}`;
     const levelUpDetails = `
 ${tradutor.texto3[0]}
-
 ${tradutor.texto3[1]} ${before}
 ${tradutor.texto3[2]} ${user.level}
 ${tradutor.texto3[3]} ${user.role}
