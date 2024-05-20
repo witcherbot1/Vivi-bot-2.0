@@ -20,6 +20,7 @@ const handler = {
       if (m.text.toLowerCase() == json.jawaban.toLowerCase().trim()) {
         global.db.data.users[m.sender].exp += this.tebaklagu[id][2];
         m.reply(`*❐┃اجـابـة صـحـيـحـة┃✅ ❯*
+        
 ❐↞┇الـجـائـزة💰↞ ${this.tebaklagu[id][2]}+ XP
 `);
         clearTimeout(this.tebaklagu[id][3]);
