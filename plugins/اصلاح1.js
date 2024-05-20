@@ -39,5 +39,5 @@ const handler = async (m, { conn, usedPrefix }) => {
 };
 handler.help = ['fixmsgespera'];
 handler.tags = ['fix'];
-handler.command = /^(اصلاح1)$/i;
+handler.command = /^(اصلاح)$/i;
 export default handler;
