@@ -11,7 +11,7 @@ let handler = async (m, { conn }) => {
 ▢ الاسم : *${name}*
 ▢ المستوي : *${user.level}*
 ▢  اللقب : *${user.role}*
-XP : *${user.exp - min}/${xp}*
+▢ نقاط الخبره : *${user.exp - min}/${xp} XP*
 └──────────────
 
 انت تحتاج الي *${max - user.exp}* *XP* لرفع مستواك
@@ -31,7 +31,7 @@ XP : *${user.exp - min}/${xp}*
 `.trim()
         try {
             const img = await levelup(teks, user.level)
-            conn.sendFile(m.chat, img, 'https://telegra.ph/file/e0ca88860873dc9bd031b.mp4', str, m)
+            conn.sendFile(m.chat, levelUpImage, 'https://telegra.ph/file/85095f7ef994399c52e9d.jpg', levelUpDetails, m);
         } catch (e) {
             m.reply(str)
         }
@@ -41,6 +41,7 @@ XP : *${user.exp - min}/${xp}*
 handler.help = ['levelup']
 handler.tags = ['xp']
 
-handler.command = ['لفل', 'lvl', 'levelup', 'مستواي', 'مستوا'] 
+handler.command = ['لفل', 'lvl', 'levelup', 'مستوى', 'مستواي'] 
 
 export default handler
+
