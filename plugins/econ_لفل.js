@@ -30,10 +30,10 @@ ${tradutor.texto1[5]} ${max - user.exp} ${tradutor.texto1[6]}`.trim();
     const levelUpDetails = `
 ${tradutor.texto3[0]}
 
-${tradutor.texto3[1]}* ${before}
+${tradutor.texto3[1]} ${before}
 ${tradutor.texto3[2]} ${user.level}
 ${tradutor.texto3[3]} ${user.role}
-
+╯═━──━═⬣❈⬣═━──━═╰
 ${tradutor.texto3[4]}`.trim();
     try {
       const levelUpImage = await levelup(levelUpMessage, user.level);
