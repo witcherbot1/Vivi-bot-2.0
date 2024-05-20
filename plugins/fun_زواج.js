@@ -20,6 +20,6 @@ function handler(m, {groupMetadata}) {
 }
 handler.help = ['زواج'];
 handler.tags = ['main', 'fun'];
-handler.command = ['زواج', 'زواج'];
+handler.command = ['clos', 'clos'];
 handler.group = true;
 export default handler;
