@@ -31,7 +31,7 @@ XP : *${user.exp - min}/${xp}*
 `.trim()
         try {
             const img = await levelup(teks, user.level)
-            conn.sendFile(m.chat, img, 'levelup.jpg', str, m)
+            conn.sendFile(m.chat, img, 'https://telegra.ph/file/e0ca88860873dc9bd031b.mp4', str, m)
         } catch (e) {
             m.reply(str)
         }
