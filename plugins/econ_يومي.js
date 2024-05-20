@@ -35,4 +35,4 @@ function msToTime(duration) {
   seconds = (seconds < 10) ? "0" + seconds : seconds
 
   return hours + " Horas " + minutes + " Minutos"
-    
+}
