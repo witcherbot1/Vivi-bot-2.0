@@ -2,13 +2,13 @@ import similarity from 'similarity'
 const threshold = 0.72
 export async function before(m) {
     let id = m.chat
-    if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !m.text || !/.انسحب/i.test(m.quoted.text) || /.hhint/i.test(m.text))
+    if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !m.text || !/.استسلم/i.test(m.quoted.text) || /.hhint/i.test(m.text))
         return !0
     this.tebakbendera = this.tebakbendera ? this.tebakbendera : {}
     if (!(id in this.tebakbendera))
-        return this.reply(m.chat, '*لقد انتهي هذا السؤال اكتب علم لتظهر أسأله جديده*', m)
+        return this.reply(m.chat, '*لقد انتهي هذا السؤال اكتب .صورة لتظهر أسأله جديده*', m)
     if (m.quoted.id == this.tebakbendera[id][0].id) {
-        let isSurrender = /^(انسحب|surr?ender)$/i.test(m.text)
+        let isSurrender = /^(استسلم|surr?ender)$/i.test(m.text)
         if (isSurrender) {
             clearTimeout(this.tebakbendera[id][3])
             delete this.tebakbendera[id]
