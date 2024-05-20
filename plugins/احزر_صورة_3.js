@@ -6,7 +6,7 @@ export async function before(m) {
         return !0
     this.tebakbendera = this.tebakbendera ? this.tebakbendera : {}
     if (!(id in this.tebakbendera))
-        return this.reply(m.chat, '*لقد انتهي هذا السؤال اكتب .صورة لتظهر أسأله جديده*', m)
+        return this.reply(m.chat, '*❐┃ انـتـهـت الـلـعـبـة ┃❗ ❯*', m)
     if (m.quoted.id == this.tebakbendera[id][0].id) {
         let isSurrender = /^(استسلم|surr?ender)$/i.test(m.text)
         if (isSurrender) {
@@ -22,7 +22,7 @@ export async function before(m) {
             clearTimeout(this.tebakbendera[id][3])
             delete this.tebakbendera[id]
         } else if (similarity(m.text.toLowerCase(), json.name.toLowerCase().trim()) >= threshold)
-            m.reply(`*لقد كنت علي وشك النجاح*!`)
+            m.reply(`*❐┃ قريييييبب ┃❗ ❯*`)
         else
             this.reply(m.chat, `❐┃اجـابـة خـاطـئـة┃❌ ❯`, m)
     }
