@@ -1,4 +1,3 @@
-
 //import db from '../lib/database.js'
 
 const free = 5000
@@ -6,7 +5,8 @@ const prem = 20000
 
 let handler = async (m, {conn, isPrems }) => {
   let time = global.db.data.users[m.sender].lastclaim + 86400000
-  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `🎁 *Anda telah mengumpulkan hadiah harian Anda*\n\n🕚 Masuk kembali *${msToTime(time - new Date())}* `
+  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `*❐┃تعال بكرا خذ هديتك┃😒❯*\n\n🕚الوقت المتبقي : 
+  *${msToTime(time - new Date())}* `
   global.db.data.users[m.sender].exp += isPrems ? prem : free
   m.reply(`
 *◄────⍆☾🎁☽⍅────►*
@@ -18,7 +18,7 @@ let handler = async (m, {conn, isPrems }) => {
 }
 handler.help = ['daily']
 handler.tags = ['econ']
-handler.command = ['هدية', 'يومي'] 
+handler.command = ['هدية', 'يومي','هدية يوميا'] 
 
 export default handler
 
