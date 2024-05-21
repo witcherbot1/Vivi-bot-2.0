@@ -17,7 +17,7 @@ const handler = async (m, { conn, isPrems }) => {
   
   *❐ الوقت المتبقي :*
   ◄ ${msToTime(time - new Date())}`;
-  conn.sendMessage(m.chat, { text: `❐┃لـقـد اتـمـمـت عـمـلـك بـنـجـاح┃✅❯
+  conn.sendMessage(m.chat, { text: `*❐┃لقد اتممت عملك بـنـجـاح┃✅❯*
   
   *⸙ ${pickRandom(global.work)}*
   *⟐ جائزتك :* ${hasil} XP` }, { quoted: m });
