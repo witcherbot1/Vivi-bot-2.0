@@ -19,8 +19,6 @@ let ruleta = rulet[Math.floor(Math.random() * 6)]
 global.db.data.users[m.sender].juegos = new Date * 1;
 if (ruleta === 'text') return m.reply(`${tradutor.texto3} ${exp} XP`).catch(global.db.data.users[m.sender].exp += exp) 
 if (ruleta === 'text2') return m.reply(`${tradutor.texto4} ${exp} XP`).catch(global.db.data.users[m.sender].exp -= exp) 
-if (ruleta === 'text3') return conn.groupParticipantsUpdate(m.chat, [m.sender], 'demote').catch(m.reply(tradutor.texto5)) 
-if (ruleta === 'text4') return conn.groupParticipantsUpdate(m.chat, [m.sender], 'promote').catch(m.reply(tradutor.texto6)) 
 if (ruleta === 'text5') return m.reply(`${tradutor.texto7} ${diamond} 💎`).catch(global.db.data.users[m.sender].diamond += diamond) 
 if (ruleta === 'text6') return m.reply(tradutor.texto8).catch(global.db.data.users[m.sender].premium += prem) 
 }
@@ -40,8 +38,7 @@ hours = Math.floor((duration / (1000 * 60 * 60)) % 24)
 hours = (hours < 10) ? "0" + hours : hours
 minutes = (minutes < 10) ? "0" + minutes : minutes
 seconds = (seconds < 10) ? "0" + seconds : seconds
-return hours + " Hora(s) " + minutes + " Minuto(s)"}
-
+return hours + ' ساعة (s) ' + minutes + ' دقيقة (s) '}
 
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())];
