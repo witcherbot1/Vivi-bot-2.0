@@ -7,7 +7,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
         conn.reply(m.chat, '❐┃لم يتم الاجابة على السؤال بعد┃❌ ❯', conn.tebakbendera[id][0])
         throw false
     }
-    let src = await (await fetch('https://gist.githubusercontent.com/Brook-88/4d9f832ef47e56aeb470b257dcec4a6a/raw/440c1d7fda1f2c8147a39d5fe4bf67ac15b8e462/%25D8%25B5%25D9%2588%25D8%25B1_%25D8%25A7%25D9%2586%25D9%2585%25D9%258A')).json()
+    let src = await (await fetch('https://gist.githubusercontent.com/Brook-88/4d9f832ef47e56aeb470b257dcec4a6a/raw/b1e8aba38b23c0889c90c1bec90d3ba1e30182d9/%25D8%25B5%25D9%2588%25D8%25B1_%25D8%25A7%25D9%2586%25D9%2585%25D9%258A')).json()
   let json = src[Math.floor(Math.random() * src.length)]
     let caption = `╮━━⬣ تخمين الشخصية ⬣━━╭
 *احزر الشخصية من الصورة👤*
