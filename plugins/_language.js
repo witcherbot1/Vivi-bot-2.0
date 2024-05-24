@@ -125,6 +125,6 @@ ${tradutor.texto2[1]}
 
 
 
-handler.command = /^(lang||langgroup)$/i;
+handler.command = /^(lang||لغة)$/i;
 
 export default handler
