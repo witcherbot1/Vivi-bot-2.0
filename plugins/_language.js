@@ -1,4 +1,4 @@
-/*************************************************/
+/************************************************/
 /*
 /* Créditos al creador de este módulo.
 /* Jefferson: https://github.com/jeffersonalionco
