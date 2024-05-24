@@ -15,7 +15,7 @@ const handler = async (m, {conn, usedPrefix}) => {
     conn.reply(m.chat, tradutor.texto1, conn.tebaklagu[id][0]);
     throw false;
   } // 5LTV57azwaid7dXfz5fzJu
-  const res = await fetchJson(`https://gist.githubusercontent.com/Brook-88/6fd1ec8ec4d33a7c0e6cdd264d4b2ca2/raw/111c844c033cd4791ca5a1a2fff4d7108baaa6c9/%25D8%25A7%25D8%25B5%25D9%2588%25D8%25A7%25D8%25AA%2520%25D8%25A7%25D9%2584%25D8%25B4%25D8%25AE%25D8%25B5%25D9%258A%25D8%25A7%25D8%25AA`);
+  const res = await fetchJson(`https://gist.githubusercontent.com/Brook-88/6fd1ec8ec4d33a7c0e6cdd264d4b2ca2/raw/81a17ef8974d7cc9bc9f2fc5347a761089a621d8/%25D8%25A7%25D8%25B5%25D9%2588%25D8%25A7%25D8%25AA%2520%25D8%25A7%25D9%2584%25D8%25B4%25D8%25AE%25D8%25B5%25D9%258A%25D8%25A7%25D8%25AA`);
   const json = res[Math.floor(Math.random() * res.length)];
   const caption = `╮━━⬣ تخمين الشخصية ⬣━━╭
 ${tradutor.texto2[0]}🗣️
