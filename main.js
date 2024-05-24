@@ -54,9 +54,6 @@ global.prefix = new RegExp('^[' + (opts['prefix'] || '*/i!#$%+£¢€¥^°=¶∆
 
 global.db = new Low(/https?:\/\//.test(opts['db'] || '') ? new cloudDBAdapter(opts['db']) : new JSONFile(`${opts._[0] ? opts._[0] + '_' : ''}database.json`));
 
-global.DATABASE = global.db; 
-
-
 import firebaseAdmin from 'firebase-admin';
 
 // save database >>
@@ -97,6 +94,7 @@ async function saveDataToFirebase() {
 setInterval(saveDataToFirebase, 60000);
 
 
+global.DATABASE = global.db; 
 global.loadDatabase = async function loadDatabase() {
   if (global.db.READ) {
     return new Promise((resolve) => setInterval(async function() {
@@ -149,6 +147,9 @@ global.loadChatgptDB = async function loadChatgptDB() {
 loadChatgptDB();
 
 /* ------------------------------------------------*/
+
+
+
 
 global.authFile = `MysticSession`;
 const {state, saveState, saveCreds} = await useMultiFileAuthState(global.authFile);
