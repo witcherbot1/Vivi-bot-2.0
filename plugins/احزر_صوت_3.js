@@ -6,7 +6,7 @@ const handler = async (m, {conn}) => {
   if (!(id in conn.tebaklagu)) throw false;
   const json = conn.tebaklagu[id][1];
   const nya = json.jawaban;
-  const nyanya = nya.replace(/[bcdfghjklmnñpqrstvwxyzBCDEFGHJKLMNÑPQRSTVWXYZ]/g, '_');
+  const nyanya = nya.replace(/[ابتثجمخدذرزسشصضطظعغفقكلمنهوي]/g, '_');
   m.reply('' + nyanya + '');
 };
 handler.command = /^تلميح|غششيني$/i;
