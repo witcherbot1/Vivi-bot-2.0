@@ -21,11 +21,11 @@ const handler = {
         global.db.data.users[m.sender].exp += this.tebaklagu[id][2];
         m.reply(`*❐┃اجـابـة صـحـيـحـة┃✅ ❯*
         
-❐↞┇الـجـائـزة💰↞ ${this.tebaklagu[id][2]}+ XP
+❐┇الـجـائـزة💰↞ ${this.tebaklagu[id][2]}+ XP
 `);
         clearTimeout(this.tebaklagu[id][3]);
         delete this.tebaklagu[id];
-      } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) m.reply(`*قريييب!*`);
+      } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) m.reply(`*❐┃قـريـب جـدااا┃🫣❯*`);
       else m.reply(tradutor.texto2);
     }
     return !0;
