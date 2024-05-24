@@ -20,7 +20,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
         await conn.sendFile(m.chat, json.img, '', caption, m),
         json, poin,
         setTimeout(() => {
-            if (conn.tebakbendera[id]) conn.reply(m.chat, `❮ ⌛┇انتهى الوقت┇⌛❯\n❐↞┇الاجـابـة✅↞ ${json.name}*┇`, conn.tebakbendera[id][0])
+            if (conn.tebakbendera[id]) conn.reply(m.chat, `❮ ⌛┇انتهى الوقت┇⌛❯\n\n❐┇الاجـابـة✅↞ ${json.name}┇`, conn.tebakbendera[id][0])
             delete conn.tebakbendera[id]
         }, timeout)
     ]
