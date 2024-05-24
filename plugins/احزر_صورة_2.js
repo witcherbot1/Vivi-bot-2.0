@@ -12,17 +12,17 @@ export async function before(m) {
         if (isSurrender) {
             clearTimeout(this.tebakbendera[id][3])
             delete this.tebakbendera[id]
-            return this.reply(m.chat, '*طلع فاشل و استسلم :( !*', m)
+            return this.reply(m.chat, '*❐┃طلع فاشل واستسلم┃🤭❯*', m)
         }
         let json = JSON.parse(JSON.stringify(this.tebakbendera[id][1]))
 
         if (m.text.toLowerCase() == json.name.toLowerCase().trim()) {
             global.db.data.users[m.sender].exp += this.tebakbendera[id][2]
-            this.reply(m.chat, `*❐┃اجـابـة صـحـيـحـة┃✅ ❯*\n\n*❐↞┇الـجـائـزة💰↞${this.tebakbendera[id][2]} EXP*`, m)
+            this.reply(m.chat, `*❐┃اجـابـة صـحـيـحـة┃✅ ❯*\n\n*❐┇الـجـائـزة💰↞${this.tebakbendera[id][2]} EXP*`, m)
             clearTimeout(this.tebakbendera[id][3])
             delete this.tebakbendera[id]
         } else if (similarity(m.text.toLowerCase(), json.name.toLowerCase().trim()) >= threshold)
-            m.reply(`*❐┃ قريييييبب ┃❗ ❯*`)
+            m.reply(`*❐┃قـريـب جـدااا┃🫣❯*`)
         else
             this.reply(m.chat, `❐┃اجـابـة خـاطـئـة┃❌ ❯`, m)
     }
