@@ -11,13 +11,13 @@ global.botnumber = "96560339273"
 global.confirmCode = ""
 
 global.owner = [
-  ['96560339273', '👑 Bobo - Creador 👑', true],
+  ['96551048712', '👑 Bobo - Creador 👑', true],
   ['96560339273'],
   ['96560339273']
 ];
 
-global.suittag = ['5219993404349'];
-global.prems = ['96560339273'];
+global.suittag = ['96551048712'];
+global.prems = ['96551048712'];
 
 global.packname = 'مملكة بيرل⭐للانمي(@kdmpearl)';
 global.author = '𝐕𝐢𝐯𝐢 2.0';
@@ -52,12 +52,12 @@ global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', s
 global.wm2 = `${dia} ${fecha}\nThe Mystic - Bot`;
 global.gt = 'The Mystic - Bot';
 global.mysticbot = 'The Mystic - Bot';
-global.md = 'https://github.com/BrunoSobrino/TheMystic-Bot-MD';
-global.mysticbot = 'https://github.com/BrunoSobrino/TheMystic-Bot-MD';
+global.md = 'https://github.com/Brook-88/Vivi-bot-2.0.git';
+global.mysticbot = 'https://github.com/Brook-88/Vivi-bot-2.0.git';
 global.waitt = '*[ ⏳ ] Cargando...*';
 global.waittt = '*[ ⏳ ] Cargando...*';
 global.waitttt = '*[ ⏳ ] Cargando...*';
-global.nomorown = '96555480132';
+global.nomorown = '96551048712';
 global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
 global.cmenut = '❖––––––『';
 global.cmenub = '┊✦ ';
