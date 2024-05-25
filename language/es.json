@@ -3831,14 +3831,14 @@
             ]
         },
         "dfail": {
-            "texto1": "*[ ℹ️ ] Este comando solo puede ser utilizado por el propietario del bot.*",
-            "texto2": "*[ ℹ️ ] Este comando solo puede ser utilizado por el propietario del bot.*",
-            "texto3": "*[ ℹ️ ] Este comando solo puede ser utilizado por moderadores y el propietario del bot.*",
-            "texto4": "*[ ℹ️ ] Este comando solo puede ser utilizado por usurios premium y el propietario del bot.*",
-            "texto5": "*[ ℹ️ ] Este comando solo puede ser utilizado en grupos.*",
-            "texto6": "*[ ℹ️ ] Este comando solo puede ser utilizado en el chat privado del bot.*",
-            "texto7": "*[ ℹ️ ] Este comando solo puede ser usado por administradores del grupo.*",
-            "texto8": "*[ ℹ️ ] Para utilizar este comando es necesario que el bot sea administrador del grupo.*",
+            "texto1": "*❐┃هاذا الامر خاص لبوبو وبس┃😏❯*",
+            "texto2": "*❐┃هاذا الامر خاص لبوبو وبس┃😏❯*",
+            "texto3": "*❐┃لا يمكن استخدام هذا الأمر إلا من قبل المشرفين ومالك البوت┃❗❯*",
+            "texto4": "*❐┃هذه الميزة خاصة لاصحاب البريميوم ومالك البوت فقط┃❗❯*",
+            "texto5": "*❐┃الامر خاص بالمجموعة┃❗❯*",
+            "texto6": "*❐┃تعال عندي في الخاص وارسل امرك┃😉❯*",
+            "texto7": "*❐┃هاذا الامر خاص بالمشرفين┃❗❯*",
+            "texto8": "*❐┃رقيني بالاول عشان تستخدم الامر┃❗❯*",
             "texto9": "*❐┃يـجـب الـتـسـجـيـل اولاً┃❗❯*\n\n ⟐ استخدم الامر : *.تسجيل*",
             "texto10": "*[ ℹ️ ] Este comando fue desactivado por el propietario del bot.*",
             "texto11": [
