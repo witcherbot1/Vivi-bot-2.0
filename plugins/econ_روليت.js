@@ -13,7 +13,7 @@ if (new Date - global.db.data.users[m.sender].juegos < 21600000) throw `*❐┃�
 *▢ الوقت المتبقي :* ${msToTime(date - new Date())}`
 let user = global.db.data.users[m.sender]
 const prem = Math.floor(Math.random() * 3600000)
-const exp = Math.floor(Math.random() * 10000)
+const exp = Math.floor(Math.random() * 20000)
 const diamond = Math.floor(Math.random() * 300)
 const money = Math.floor(Math.random() * 10000)
 let rulet = ['text', 'text2', 'text5', 'text6']; 
