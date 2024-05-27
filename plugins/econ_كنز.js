@@ -15,7 +15,7 @@ const handler = async (m, {isPrems, conn}) => {
   const mystic = Math.floor(Math.random() * 4000);
   const expp = Math.floor(Math.random() * 20000);
 
-  global.db.data.users[m.sender].diamond += diamond;
+  global.db.data.users[m.sender].limit += diamond;
   global.db.data.users[m.sender].money += mystic;
   global.db.data.users[m.sender].joincount += tok;
   global.db.data.users[m.sender].exp += expp;
@@ -24,7 +24,7 @@ const handler = async (m, {isPrems, conn}) => {
 ${tradutor.texto2[0]}
 ${tradutor.texto2[1]}
 ${tradutor.texto2[2]}
-▢ *${tradutor.texto2[3]} :* ${dia} 
+▢ *${tradutor.texto2[3]} :* ${diamond} 
 ▢ *${tradutor.texto2[4]} :* ${tok} 
 ▢ *${tradutor.texto2[5]} :* ${mystic} 
 ▢ *${tradutor.texto2[6]} :* ${expp} 
