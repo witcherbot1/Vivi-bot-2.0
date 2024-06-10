@@ -154,7 +154,7 @@ let uptime = clockString(_uptime)
 };
 handler.help = ['imgboton'];
 handler.tags = ['For Test'];
-handler.command = /^(تست)$/i;
+handler.command = /^(اوامر|الاوامر|الأوامر|أوامر)$/i;
 
 function clockString(ms) {
     let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
