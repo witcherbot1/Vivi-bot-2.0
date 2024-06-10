@@ -1,20 +1,33 @@
-let handler = async (m, { conn, args, usedPrefix, command }) => {
+//Copyright ©JOANIMI/KILLUA
+//https://whatsapp.com/channel/0029Vab5oDNElagpHtJjmT0B
+
+import { prepareWAMessageMedia, generateWAMessageFromContent, getDevice } from '@whiskeysockets/baileys'
+const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
+    const device = await getDevice(m.key.id);
+    const mentionId = m.key.participant || m.key.remoteJid;
+
 let _uptime = process.uptime() * 1000
 let uptime = clockString(_uptime)
-let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
-    conn.relayMessage(m.chat, {
-      viewOnceMessage: {
-        message: {
-          interactiveMessage: {
+
+    if (device !== 'desktop' || device !== 'web') {      
+        var joanimiimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/2a7bf4ee1980dc10aec4e.jpg'}}, { upload: conn.waUploadToServer })
+        const interactiveMessage = {
+            body: { text: `*▢ مرحبا بك يا : @${mentionId.split('@')[0]}*
+      ──━━━══⟐══━━━──
+ • # اختر القائمه من خلال الزر ☟
+ • # اكتب *" . "* قبل كل امر
+ • # مازال هذا البوت تحت التطوير اذا
+      واجهتك اي مشكله يرجى التواصل
+      مع المطور
+      ──━━━══⟐══━━━──
+▢ اسـم الـبـوت : *فـيـفـي - Vivi*
+▢ الــمــطــور : *بــروك - 𝐾 ͟͟𝐿 ͟͟⁩*
+▢ مـدة الـتـشـغـيـل : *${uptime}*
+╯─━━──═❆ ❮ ❖ ❯ ❆═──━━─╰`.trim() },
+            footer: { text: `*_˼‏ 𝙑 𝙞 𝙫 𝙞  𝘽 𝙤 𝙩 – v2.0 – 𝘽 𝙧 𝙤 𝙤 𝙠 ˹_*`.trim() },  
             header: {
-              title: '╮━─═❆ ❮قـائـمـة الـاوامــر❯ ❆═─━╭'
-            },
-    contextInfo: {
-        mentionedJid: [m.sender],
-        isForwarded: false,
-    },
-            body: {
-              text: `*▢ مرحبا بك يا :* @${who.replace('@s.whatsapp.net', '')}
+                title: `╮━─═❆❮ قـائـمـة الاوامــر ❯❆═─━╭`,
+                subtitle: `*▢ مرحبا بك يا : @${mentionId.split('@')[0]}*
       ──━━━══⟐══━━━──
  • # اختر القائمه من خلال الزر ☟
  • # اكتب *" . "* قبل كل امر
@@ -25,75 +38,123 @@ let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.m
 ▢ اسم البوت : *فـيـفـي - Vivi*
 ▢ المطور : *بروك - 𝐾 ͟͟𝐿 ͟͟⁩*
 ▢ مدة التشغيل : *${uptime}*
-*╯─━━──═❆ ❮ ❖ ❯  ❆═──━━─╰*
-> *_˼‏ 𝙑 𝙞 𝙫 𝙞  𝘽 𝙤 𝙩 – 2.0 – 𝘽 𝙧 𝙤 𝙤 𝙠 ˹_*`
+╯─━━──═❆ ❮ ❖ ❯ ❆═──━━─╰`,
+                hasMediaAttachment: true,
+                imageMessage: joanimiimg.imageMessage,
             },
-        
             nativeFlowMessage: {
-              buttons: [
-                {
-                  name: 'single_select',
-                  buttonParamsJson: JSON.stringify({
-                    title: 'اضـغـط هـنـا ➥',
-                    sections: [
-                      {
-                        title: '⟐═━─⏣─━═❪🇻 🇮 🇻 🇮   🇧 🇴 🇹❫═━─⏣─━═⟐',
-                        highlight_label: '☚',
-                        rows: [
-                          {
-                            header: '# قـسـم الـمـطـور⚙️ ⍅',
-                            title: '.مطور',
-                            description: '',
-                            id: '.مطور'
-                          },
-                          {
-                            header: '# قـسـم الـمـهـام🗂️ ⍅',
-                            title: '.مهام',
-                            description: '',
-                            id: '.مهام'
-                          },
-                          {
-                            header: '# قـسـم الـطـلـبـات📥 ⍅',
+  						buttons: [
+  							{
+  								name: 'single_select',
+  						  	buttonParamsJson: JSON.stringify({
+  						  		title: 'اضـغـط هـنـا ➥',
+  						  		sections: [
+  						  			{
+  						  				title: '⟐═━─⏣─━═❪ 🇻 🇮 🇻 🇮   🇧 🇴 🇹 ❫═━─⏣─━═⟐',
+  							  	    highlight_label: '☚',
+  						  		    rows: [
+                                        {
+                                            header: '# قـسـم الـمـهـام🗂️ ⍅',
+                                            title: '.مهام',
+                                            description: '',
+                                            id: '.مهام'
+                                          }
+  						  		    ]
+  						  			},
+  						  			{
+  						  				highlight_label: '',
+  						  				rows: [
+  						  					{
+  						  		    		header: '# قـسـم الـطـلـبـات📥 ⍅',
                             title: '.طلبات',
                             description: '',
                             id: '.طلبات'
-                          },
-                          {
-                            header: '# قـسـم الـانـمـي⛩️ ⍅',
-                            title: '.انمي',
-                            description: '',
-                            id: '.انمي'
-                          },
-                          {
-                            header: '# قـسـم الـتـرفـيـه🎮 ⍅',
+  						  		    	}
+  						  				]
+  						  			},
+  						  			{
+  						  				highlight_label: '',
+  						  				rows: [
+  						  					{
+  						  		    		header: '# قـسـم الـتـرفـيـه🎮 ⍅',
                             title: '.ترفيه',
                             description: '',
                             id: '.ترفيه'
-                          },
-                          {
-                            header: '# قـسـم الـديـن📿 ⍅',
+  						  		    	}
+  						  				]
+  						  			},
+                                    	{
+  						  				highlight_label: '',
+  						  				rows: [
+  						  					{
+  						  		    		header: '# قـسـم الـديـن📿 ⍅',
                             title: '.دين',
                             description: '',
                             id: '.دين'
-                          },
-                        ]
-                      }
-                    ]
-                  }),
-                  messageParamsJson: ''
-                }
-              ]
+  						  		    	}
+  						  				]
+  						  			},
+                                    {
+                                        highlight_label: '',
+                                        rows: [
+                                            {
+                                            header: '# قـسـم الـمـطـور⚙️ ⍅',
+                            title: '.مطور',
+                            description: '',
+                            id: '.مطور'
+                                        }
+                                        ]
+                                    }
+  						  		]
+  						  	})
+  							},
+                              {
+                                  
+                              },
+                              {
+                                  
+                              },
+                              {
+                                  
+                              },
+                              {
+
+                                  
+                              },
+                              {
+                                  
+                              },
+                              {
+                                  
+                              },
+                              {
+                                  
+                              },
+                              {
+                                  
+                              }
+  			  		],
+                messageParamsJson: ''
             }
-          }
-        }
-      }
-    }, {})
+        };        
 
-}
+        let msg = generateWAMessageFromContent(m.chat, {
+            viewOnceMessage: {
+                message: {
+                    interactiveMessage,
+                },
+            },
+        }, { userJid: conn.user.jid, quoted: m })
+        msg.message.viewOnceMessage.message.interactiveMessage.contextInfo = { mentionedJid: [mentionId] };
+        conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id });
 
-handler.help = ['info']
-handler.tags = ['main']
-handler.command = ['اوامر']
+    } else {
+        conn.sendFile(m.chat, 'JoAnimi•Error.jpg', m);      
+    }    
+};
+handler.help = ['imgboton'];
+handler.tags = ['For Test'];
+handler.command = /^(تست)$/i;
 
 function clockString(ms) {
     let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
@@ -101,4 +162,4 @@ function clockString(ms) {
     let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
     return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')}
 
-export default handler
+export default handler;
