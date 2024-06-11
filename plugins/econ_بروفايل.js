@@ -37,7 +37,7 @@ const handler = async (m, {conn, usedPrefix, participants, isPrems}) => {
     *▢ الـتـسـجـيـل :* ${registered ? 'مـسـجـل': 'غير مـسـجـل'}
    ╯┈┈┈┈┈┈┈┈┈┈┈┈⩺
    ╮┈┈┈┈⊷
-    *▢ الالـمـاس :* ${limit}
+    *▢ الالـمـاس :* ${user.diamond}
    ╯┈┈┈┈┈┈┈┈┈┈┈┈⩺
    ╮┈┈┈┈⊷
     *▢ نـقـاط الـخـبـره :* ${user.exp}
