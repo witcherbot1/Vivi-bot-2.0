@@ -3818,12 +3818,12 @@
                 "▢ *Motivo:* Sin especificar",
                 "*[ ℹ️ ] Si consideras que esto es un error y cuentas con pruebas, puedes comunicarte con el propietario(a) del bot para apelar la suspensión.*"
             ],
-            "texto2": "*[ ℹ️ ] Sus diamantes se han agotado, puede adquirir más con el comando:*",
+            "texto2": "*❐┃لقد نفد الماس الخاص بك، يمكنك شراء المزيد باستخدام الأمر : ┃❗❯*",
             "texto3": [
-                "*[ ℹ️ ] Se require tener el nivel",
-                "para poder utilizar el comando. Tú nivel actual es",
-                "usa el comando",
-                "para subir tu nivel con XP.*"
+                "❐┃ويشترط أن يكون المستوى",
+                "لتتمكن من استخدام الأمر.  مستواك الحالي هو",
+                "استخدم الأمر",
+                "لرفع مستواك مع XP┃❗❯"
             ],
             "texto4": [
                 "*[ ℹ️ ] Se utilizaron",
@@ -3840,11 +3840,11 @@
             "texto7": "*❐┃هاذا الامر خاص بالمشرفين┃❗❯*",
             "texto8": "*❐┃رقيني بالاول عشان تستخدم الامر┃❗❯*",
             "texto9": "*❐┃يـجـب الـتـسـجـيـل اولاً┃❗❯*\n\n ⟐ استخدم الامر : *.تسجيل*",
-            "texto10": "*[ ℹ️ ] Este comando fue desactivado por el propietario del bot.*",
+            "texto10": "*❐┃تم تعطيل هذا الأمر من قبل مالك الروبوت┃❗❯*",
             "texto11": [
-                "*[ ⚠ ] Advertencia*",
-                "*[ ⚠ ] Advertencia*",
-                "https://github.com/BrunoSobrino/TheMystic-Bot-MD"
+                "",
+                "",
+                ""
             ]
         },
         "participantsUpdate": {
