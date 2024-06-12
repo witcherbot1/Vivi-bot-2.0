@@ -37,7 +37,20 @@ let rtotalreg = Object.values(global.db.data.users).filter(user => user.register
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(900) 
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
-let str = `‬‬‬‬`.trim();
+let str = `‬‬‬‬╮─━─═ ❆  〘🌟〙  ❆ ═─━─╭
+  ⟐╡🇻 🇮 🇻 🇮   🇧 🇴 🇹 ╞⟐
+⟐──━═━─⬣  ❈  ⬣─━═━──⟐
+*✦ مرحبا بك يا :* ${taguser}
+ ❐ الـيـك قـائـمـة الجروب⚙️: ⇓⇓
+⟐──━═━─⬣  ❈  ⬣─━═━──⟐
+ *⿻◄*『 *.منشن* 』
+ *⿻◄*『 *.مخفي* 』
+ *⿻◄*『 *.جروب فتح* 』
+ *⿻◄*『 *.جروب قفل* 』
+ *⿻◄*『 *.تغيير_افتار* 』
+ *⿻◄‏*『 *.admins* 』
+ *⿻◄*『 *.اشباح* 』
+╯─━─═ ❆  〘🌟〙  ❆ ═─━─╰‬‬‬‬`.trim();
 
 conn.sendMessage(m.chat, {
         video: { url: videoUrl }, caption: str,
@@ -47,7 +60,7 @@ conn.sendMessage(m.chat, {
 }; 
 handler.help = ['main']
 handler.tags = ['group']
-handler.command = ['مطور'] 
+handler.command = ['جروب'] 
 
 export default handler
 function clockString(ms) {
