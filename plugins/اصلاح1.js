@@ -6,7 +6,7 @@ import path from 'path';
 const handler = async (m, { conn, usedPrefix }) => {
   const datas = global
   const idioma = datas.db.data.users[m.sender].language
-  const _translate = JSON.parse(readFileSync(`./language/${idioma}.json`))
+  const _translate = JSON.parse(readFileSync(`./language/ar.json`))
   const tradutor = _translate.plugins.fix_esperando_mensage
 
   if (global.conn.user.jid !== conn.user.jid) {
@@ -39,5 +39,5 @@ const handler = async (m, { conn, usedPrefix }) => {
 };
 handler.help = ['fixmsgespera'];
 handler.tags = ['fix'];
-handler.command = /^(اصلاح)$/i;
+handler.command = /^(2اصلاح)$/i;
 export default handler;
