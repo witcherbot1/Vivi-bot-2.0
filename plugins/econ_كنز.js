@@ -1,6 +1,6 @@
-const handler = async (m, {isPrems, conn}) => {
-  const datas = global
-  const idioma = datas.db.data.users[m.sender].language
+  const handler = async (m, {conn, text, isPrems}) => {
+    const datas = global
+    const idioma = datas.db.data.users[m.sender].language
   const _translate = JSON.parse(fs.readFileSync(`./language/ar.json`))
   const tradutor = _translate.plugins.rpg_cofre
 
@@ -10,12 +10,12 @@ const handler = async (m, {isPrems, conn}) => {
 ▢ ${tradutor.texto1[1]}`;
 
   const img = 'https://telegra.ph/file/037ef8a889c823ee566e6.jpg';
-  const diamond = Math.floor(Math.random() * 50);
+  const diamond = Math.floor(Math.random() * 100);
   const tok = Math.floor(Math.random() * 10);
   const mystic = Math.floor(Math.random() * 4000);
   const expp = Math.floor(Math.random() * 20000);
 
-  global.db.data.users[m.sender].limit += diamond;
+    (global.db.data.users[m.sender].diamond += diamond);
   global.db.data.users[m.sender].money += mystic;
   global.db.data.users[m.sender].joincount += tok;
   global.db.data.users[m.sender].exp += expp;
