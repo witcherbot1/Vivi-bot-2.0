@@ -25,7 +25,7 @@ const handler = async (m, {conn}) => {
 };
 handler.help = ['reto'];
 handler.tags = ['fun'];
-handler.command = /^(زخرفة|زخرفه)/i;
+handler.command = /^(زخرفه)/i;
 export default handler;
 
 function pickRandom(list) {
