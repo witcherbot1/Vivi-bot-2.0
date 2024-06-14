@@ -191,7 +191,7 @@ const handler = async (m, { conn, command }) => {
     await m.reply(mensaje);
   }
 
-  if (command === 'روليت') {
+  if (command === 'روليت_متجر') {
     const frase_romantica = frasesromanticas[Math.floor(Math.random() * frasesromanticas.length)];
     const mensaje = `*▪━━━━ ◦「 المتجر 」◦ ━━━━▪*
 
@@ -1202,7 +1202,7 @@ handler.command = handler.help = [
 'تغيير_لقب_مؤقت',
 'تقييد',
 'حجز_لقب',
-'روليت',
+'روليت_متجر',
 'منع_شراء',
   
 'استقبال',
@@ -1244,8 +1244,6 @@ handler.command = handler.help = [
 'تست'         
 ];
 handler.group = true
-handler.admin = true
-handler.botAdmin = true
 
 export default handler;
 
