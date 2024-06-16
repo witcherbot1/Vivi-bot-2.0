@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 let points = 50;
 let maxPlayers = 10;
 let maxQuestions = 50;
-let questionTimeout = 25 * 1000; 
+let questionTimeout = 10 * 1000; 
 
 let handler = async (m, { conn, command }) => {
     let id = m.chat;
@@ -16,21 +16,20 @@ let handler = async (m, { conn, command }) => {
         }
 
         conn.itachixvi[id] = [
-            await conn.reply(m.chat, `╮───〈 *مـسـابـقـه صـور 🎡* 〉───⟐
+            await conn.reply(m.chat, `╮───〈 *مـسـابـقـه صور 🎡* 〉───⟐
 │ ╮┈┈┈┈┈┈⊷
 ┴ *▢❯*  جاوب علي السوال قبل اي احد.
-    *▢❯*  منشن الرساله عشان تحسب اجابة.
     *▢❯*  السوال الواحد بـ 50 نقطه.
     ╯┈┈┈┈┈┈┈┈┈┈┈┈⩺
     ╮┈┈┈┈┈┈⊷
-    *▢❯*  للانضمام للمسابقة : *.انضم-صور* 
+    *▢❯* للانضمام للمسابقة: *.انضم-صور* 
 ┬ *▢❯*  لحذف المسابقة : *.حذف-صور*
 │ ╯┈┈┈┈┈┈┈┈┈┈┈┈⩺
 ╯──────────────────⟐`, m), [], [], 0, 0, null
         ];
 
         conn.reply(m.chat, `*❐┃المسابقة تم تفعيلها┃🎡❯*
- *▢* استخدم الامر : *.انضم-صور*`, m);
+ *▢* استخدم الامر : *.انضم صور*`, m);
         throw false;
       //زرار الانضمام
     } else if (command === "انضم-صور") {
@@ -53,15 +52,15 @@ let handler = async (m, { conn, command }) => {
         conn.reply(m.chat, `*❐┃تـم الـتـسـجـيـل بـنـجـاح┃✅❯*\n ▢ تـبـقـى للـانـضـمـام : ${maxPlayers - conn.itachixvi[id][2].length}`, m);
 //وقفنا هنا تمام
         if (conn.itachixvi[id][2].length >= 2) {
-            let itachixvi = await (await fetch(`https://gist.githubusercontent.com/Brook-88/4d9f832ef47e56aeb470b257dcec4a6a/raw/f3dcd83ee52f9a1e32560f5d68bed95a6047fd8a/%25D8%25B5%25D9%2588%25D8%25B1_%25D8%25A7%25D9%2586%25D9%2585%25D9%258A`)).json();
+            let itachixvi = await (await fetch(`https://raw.githubusercontent.com/Brook-88/Game/main/game-anime.json`)).json();
             let json = itachixvi[Math.floor(Math.random() * itachixvi.length)];
             conn.itachixvi[id][1] = json;
             let playersList = conn.itachixvi[id][2].map((player, i) => `${i + 1} - @${player.id.split('@')[0]} [${player.points} نقطة]`).join('\n');
-            let caption = `╮─┈〈 *مـسـابـقـه صـور 🎡* 〉┈─┈⟐
+            let caption = `╮─┈〈 *مـسـابـقـه صـور 🎡* 〉┈─⟐
 *▢❯ رقـم الـسـوال :* ${conn.itachixvi[id][4] + 1}
 *▢❯ اجب بسرعه لكسب النقاط*
 *▢❯ الجائزة :* ⌊ ${points} ⌉ نقطة لكل أجابة
-╯┈──┈┈─┈┈┈┈──┈┈──┈⟐`.trim()
+╯┈──┈┈─┈┈┈┈──┈┈─┈⟐`.trim()
             conn.sendFile(m.chat, json.img, '', caption, m)
 //لضبط الوقت
             conn.itachixvi[id][5] = setTimeout(() => {
@@ -78,11 +77,11 @@ let handler = async (m, { conn, command }) => {
                     conn.itachixvi[id][3]++;
                     conn.itachixvi[id][4]++;
 
-                    let newCaption = `╮─┈〈 *مـسـابـقـه صـور 🎡* 〉┈─┈⟐
+                    let newCaption = `╮─┈〈 *مـسـابـقـه صـور 🎡* 〉┈─⟐
 *▢❯ رقـم الـسـوال :* ${conn.itachixvi[id][4] + 1}
 *▢❯ اجب بسرعه لكسب النقاط*
 *▢❯ الجائزة :* ⌊ ${points} ⌉ نقطة لكل أجابة
-╯┈──┈┈─┈┈┈┈──┈┈──┈⟐`.trim()
+╯┈──┈┈─┈┈┈┈──┈┈─┈⟐`.trim()
                     conn.sendFile(m.chat, newJson.img, '', newCaption, m)
                 }, 1000); 
             }, questionTimeout);
@@ -124,17 +123,17 @@ ${playersList}
 ╯┈──┈┈─┈┈┈┈──┈┈──┈⟐`, m, { mentions: conn.parseMention(playersList) });
             delete this.itachixvi[id];
         } else {
-            let itachixvi = await (await fetch(`https://gist.githubusercontent.com/Brook-88/4d9f832ef47e56aeb470b257dcec4a6a/raw/f3dcd83ee52f9a1e32560f5d68bed95a6047fd8a/%25D8%25B5%25D9%2588%25D8%25B1_%25D8%25A7%25D9%2586%25D9%2585%25D9%258A`)).json();
+            let itachixvi = await (await fetch(`https://raw.githubusercontent.com/Brook-88/Game/main/game-anime.json`)).json();
             json = itachixvi[Math.floor(Math.random() * itachixvi.length)];
             this.itachixvi[id][1] = json;
             this.itachixvi[id][3] = questionCount;
             this.itachixvi[id][4]++;
             let playersList = players.map((player, i) => `${i + 1} - @${player.id.split('@')[0]} [${player.points} نقطة, ${player.correctAnswers} إجابات صحيحة]`).join('\n');
-            let caption = `╮─┈〈 *مـسـابـقـه صـور 🎡* 〉┈─┈⟐
+            let caption = `╮─┈〈 *مـسـابـقـه صـور 🎡* 〉┈─⟐
 *▢❯ رقـم الـسـوال :* ${conn.itachixvi[id][4] + 1}
 *▢❯ اجب بسرعه لكسب النقاط*
 *▢❯ الجائزة :* ⌊ ${points} ⌉ نقطة لكل أجابة
-╯┈──┈┈─┈┈┈┈──┈┈──┈⟐`.trim()
+╯┈──┈┈─┈┈┈┈──┈┈─┈⟐`.trim()
             this.sendFile(m.chat, json.img, '', caption, m)
 
  
@@ -152,11 +151,11 @@ ${playersList}
                     this.itachixvi[id][3]++;
                     this.itachixvi[id][4]++;
 //تكرار الشروط مهمه
-                    let newCaption = `╮─┈〈 *مـسـابـقـه صـور 🎡* 〉┈─┈⟐
+                    let newCaption = `╮─┈〈 *مـسـابـقـه صـور 🎡* 〉┈─⟐
 *▢❯ رقـم الـسـوال :* ${conn.itachixvi[id][4] + 1}
 *▢❯ اجب بسرعه لكسب النقاط*
 *▢❯ الجائزة :* ⌊ ${points} ⌉ نقطة لكل أجابة
-╯┈──┈┈─┈┈┈┈──┈┈──┈⟐`.trim()
+╯┈──┈┈─┈┈┈┈──┈┈─┈⟐`.trim()
                     this.sendFile(m.chat, newJson.img, '', newCaption, m)
                 }, 1000); 
             }, questionTimeout);
@@ -164,5 +163,5 @@ ${playersList}
     }
 };
 handler.command = /^(مسابقة-صور|انضم-صور|حذف-صور)$/i;
-
+handler.group = true;
 export default handler;
