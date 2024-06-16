@@ -19,6 +19,8 @@ let handler = async (m, { conn, command }) => {
             await conn.reply(m.chat, `╮───〈 *مـسـابـقـه عيون🎡* 〉───⟐
 │ ╮┈┈┈┈┈┈⊷
 ┴ *▢❯*  جاوب علي السوال قبل اي احد.
+    *▢❯*  تبدأ المسابقة عند تسجيل اربع 
+           اعضاء في المسابقة.
     *▢❯*  السوال الواحد بـ 50 نقطه.
     ╯┈┈┈┈┈┈┈┈┈┈┈┈⩺
     ╮┈┈┈┈┈┈⊷
@@ -38,7 +40,7 @@ let handler = async (m, { conn, command }) => {
         }
 
         if (conn.venom3mk[id][2].length >= maxPlayers) {
-            conn.reply(m.chat, 'اكتمل العدد', m);
+            conn.reply(m.chat, '*❐┃اكـتـمـل الـعـدد المطلوب┃✅❯*', m);
             throw false;
         }
 
@@ -50,7 +52,7 @@ let handler = async (m, { conn, command }) => {
         conn.venom3mk[id][2].push({ id: m.sender, points: 0, correctAnswers: 0 });
         conn.reply(m.chat, `*❐┃تـم الـتـسـجـيـل بـنـجـاح┃✅❯*\n ▢ تـبـقـى للـانـضـمـام : ${maxPlayers - conn.venom3mk[id][2].length}`, m);
 
-        if (conn.venom3mk[id][2].length >= 2) {
+        if (conn.venom3mk[id][2].length >= 4) {
             let venom3mk = await (await fetch(`https://raw.githubusercontent.com/Brook-88/Game/main/game-eyes.json`)).json();
             let json = venom3mk[Math.floor(Math.random() * venom3mk.length)];
             conn.venom3mk[id][1] = json;
