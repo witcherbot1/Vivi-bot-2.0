@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 let points = 50;
 let maxPlayers = 10;
-let maxQuestions = 50;
+let maxQuestions = 30;
 let questionTimeout = 10 * 1000; // 25 ثانيه لو عايز تغيرها براحتك
 
 let handler = async (m, { conn, command }) => {
