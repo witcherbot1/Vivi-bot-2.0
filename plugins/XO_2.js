@@ -61,9 +61,9 @@ export async function before(m) {
         }
         let winner = isSurrender ? room.game.currentTurn : room.game.winner
         let str = `
-        *∞──────「🎮」──────∞*
+        *∞──────「🎮」─────∞*
 ${isWin ? `@${winner.split('@')[0]} انت الفائز 🎉 *+${winScore} XP*` : isTie ? `انتهت اللعبة, بالتعادل *+${playScore} XP*` : `لقد حان دورك ${['❎', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})
-*∞──────「🎮」──────∞*`} 
+*∞──────「🎮」─────∞*`} 
 
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
@@ -73,7 +73,7 @@ ${arr.slice(6).join('')}
 ▩ *اللاعب 2* ⭕ : @${room.game.playerO.split('@')[0]}
 
 ☒ للخروج من الروم اكتب : delxo. 
-*∞──────「🎮」──────∞*`.trim()
+*∞──────「🎮」─────∞*`.trim()
         let users = global.global.db.data.users
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
