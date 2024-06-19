@@ -12,7 +12,7 @@ const handler = {
 
 
     const id = m.chat;
-    if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/تخمين الشخصية من الصوت/i.test(m.quoted.text)) return !0;
+    if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/‏/i.test(m.quoted.text)) return !0;
     this.tebaklagu = this.tebaklagu ? this.tebaklagu : {};
     if (!(id in this.tebaklagu)) return m.reply(tradutor.texto1);
     if (m.quoted.id == this.tebaklagu[id][0].id) {
