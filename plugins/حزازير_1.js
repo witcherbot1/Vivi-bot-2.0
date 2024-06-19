@@ -2,7 +2,7 @@ import fs from 'fs';
 
 
 const timeout = 60000;
-const poin = 500;
+const poin = 1000;
 const handler = async (m, {conn, usedPrefix}) => {
   const datas = global
   const idioma = datas.db.data.users[m.sender].language
@@ -24,11 +24,12 @@ const handler = async (m, {conn, usedPrefix}) => {
   const _clue = json.response;
   const clue = _clue.replace(/[A-Za-z]/g, '_');
   const caption = `
-ⷮ *╮━━⬣  حزازير وفوازير  ⬣━━╭*
+╮─┈〈 *حـزازيـر وفـوازير❔*〉┈─⟐
 *◉ ${json.question}*
-${tradutor.texto2[0]} ${(timeout / 1000).toFixed(2)} ثانية
-${tradutor.texto2[1]} ${poin}+ Exp
-╯━━━━━━⬣❈⬣━━━━━━╰`.trim();
+*▢❯* الوقت : ${(timeout / 1000).toFixed(2)} ثانيه
+*▢❯* الجائزة : ${poin}+ EXP
+*▢❯* الرد على هذه الرسالة مع الاجابة!
+╯┈──┈┈─┈┈┈┈──┈┈─┈⟐`.trim();
   conn.tekateki[id] = [
     await conn.reply(m.chat, caption, m), json,
     poin,
