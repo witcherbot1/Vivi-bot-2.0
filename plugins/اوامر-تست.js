@@ -50,7 +50,7 @@ let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.m
                             header: '# قـسـم الـمـهـام🗂️ ⍅',
                             title: '.مهام',
                             description: '',
-                            id: '.مهام'
+                            id: 'مهام'
                           },
                           {
                             header: '# قـسـم الـطـلـبـات📥 ⍅',
