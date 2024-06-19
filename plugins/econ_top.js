@@ -4,15 +4,16 @@ let handler = async (m, { conn, args, participants, usedPrefix }) => {
 let users = Object.entries(global.db.data.users).map(([key, value]) => { 
 return {...value, jid: key}
   })
+
 let sortedExp = users.map(toNumber('exp')).sort(sort('exp'))
-let sortedLim = users.map(toNumber('diamond')).sort(sort('diamond'))
+let sortedLim = users.map(toNumber('limit')).sort(sort('limit'))
 let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
 let sortedRole = users.map(toNumber('role')).sort(sort('role'))
 let sortedMoney = users.map(toNumber('money')).sort(sort('money'))
 let sortedJoincount = users.map(toNumber('joincount')).sort(sort('joincount'))
 let sortedPremium = users.map(toNumber('premium')).sort(sort('premium'))
 let usersExp = sortedExp.map(enumGetKey)
-let usersLim = sortedLim.map(enumGetKey)
+let usersdiamond = sortedLim.map(enumGetKey)
 let usersLevel = sortedLevel.map(enumGetKey)
 let usersRole = sortedRole.map(enumGetKey)
 let usersMoney = sortedMoney.map(enumGetKey)
@@ -31,8 +32,8 @@ ${sortedExp.slice(0, len).map(({ jid, exp }, i) => `${i + 1}. ${participants.som
 ⟐──━═━─⬣  ❈  ⬣─━═━──⟐
 
 ▢‏ *𝐓𝐎𝐏 ${len} 𝐃𝐈𝐀𝐌𝐀𝐍𝐓𝐄* 💎
-✦ المركز : *${usersLim.indexOf(m.sender) + 1}* من *${usersLim.length}* مصنف
-${sortedLim.slice(0, len).map(({ jid, limit }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} ${limit}`).join`\n`}
+✦ المركز : *${usersdiamond.indexOf(m.sender) + 1}* من *${usersdiamond.length}* مصنف
+${sortedLim.slice(0, len).map(({ jid, diamond }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} ${diamond}`).join`\n`}
 ⟐──━═━─⬣  ❈  ⬣─━═━──⟐
 
 ▢‏ *𝐓𝐎𝐏 ${len} 𝐋𝐄𝐕𝐄𝐋* 💠
