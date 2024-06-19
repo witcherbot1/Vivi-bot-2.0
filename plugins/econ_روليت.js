@@ -14,7 +14,7 @@ if (new Date - global.db.data.users[m.sender].juegos < 21600000) throw `*❐┃�
 let user = global.db.data.users[m.sender]
 const prem = Math.floor(Math.random() * 3600000)
 const exp = Math.floor(Math.random() * 20000)
-const limit = Math.floor(Math.random() * 300)
+const diamond = Math.floor(Math.random() * 300)
 const money = Math.floor(Math.random() * 10000)
 let rulet = ['text', 'text2', 'text5', 'text6']; 
 let ruleta = rulet[Math.floor(Math.random() * 4)]
@@ -24,7 +24,7 @@ if (ruleta === 'text') return m.reply(`${tradutor.texto3} ${exp} XP`).catch(glob
   
 if (ruleta === 'text2') return m.reply(`${tradutor.texto4} ${exp} XP`).catch(global.db.data.users[m.sender].exp -= exp) 
   
-if (ruleta === 'text5') return m.reply(`${tradutor.texto7} ${limit} 💎`).catch(global.db.data.users[m.sender].limit += limit) 
+if (ruleta === 'text5') return m.reply(`${tradutor.texto7} ${diamond} 💎`).catch(global.db.data.users[m.sender].diamond += diamond) 
   
 if (ruleta === 'text6') return m.reply(tradutor.texto8).catch(global.db.data.users[m.sender].premium += prem) 
 }
