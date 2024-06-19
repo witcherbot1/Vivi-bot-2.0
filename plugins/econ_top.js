@@ -5,7 +5,7 @@ let users = Object.entries(global.db.data.users).map(([key, value]) => {
 return {...value, jid: key}
   })
 let sortedExp = users.map(toNumber('exp')).sort(sort('exp'))
-let sortedLim = users.map(toNumber('limit')).sort(sort('limit'))
+let sortedLim = users.map(toNumber('diamond')).sort(sort('diamond'))
 let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
 let sortedRole = users.map(toNumber('role')).sort(sort('role'))
 let sortedMoney = users.map(toNumber('money')).sort(sort('money'))
