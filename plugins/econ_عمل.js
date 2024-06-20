@@ -11,7 +11,7 @@ const handler = async (m, { conn, isPrems }) => {
   let enviando;
   if (enviando) return
   enviando = true
-  const hasil = Math.floor(Math.random() * 6000);
+  const hasil = Math.floor(Math.random() * 10000);
   const time = global.db.data.users[m.sender].lastwork + 600000;
   if (new Date - global.db.data.users[m.sender].lastwork < 600000) throw `*❮ ⌛┇خذ استراحة يكوتش┇⌛❯*
   
