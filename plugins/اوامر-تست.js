@@ -93,7 +93,7 @@ let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.m
 
 handler.help = ['info']
 handler.tags = ['main']
-handler.command = ['اوامر']
+handler.command = ['امر']
 
 function clockString(ms) {
     let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
