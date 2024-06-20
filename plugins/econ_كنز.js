@@ -21,14 +21,14 @@
   global.db.data.users[m.sender].exp += expp;
 
   const texto = `
-${tradutor.texto2[0]}
-${tradutor.texto2[1]}
-${tradutor.texto2[2]}
-▢ *${tradutor.texto2[3]} :* ${diamond} 
-▢ *${tradutor.texto2[4]} :* ${tok} 
-▢ *${tradutor.texto2[5]} :* ${mystic} 
-▢ *${tradutor.texto2[6]} :* ${expp} 
-${tradutor.texto2[7]}`;
+╮━──━═⟐❪╰🏴‍☠️╮❫⟐═━──━╭
+     *❪╰مـحـتـوى صـنـدوق الكـنـز╮❫*
+      ──━━━══⟐══━━━──
+*▢ الألماس💎:* ${diamond}
+*▢ العملات🪙:* ${tok}
+*▢ العملات الغامضة👾:* ${mystic}
+*▢ الخبرة⚡:* ${expp}
+╯━────━═⟐❈⟐═━────━╰`;
 
   const fkontak = {
     'key': {
