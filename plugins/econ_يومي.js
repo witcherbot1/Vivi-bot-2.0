@@ -1,6 +1,6 @@
 //import db from '../lib/database.js'
 
-const free = 5000
+const free = 10000
 const prem = 20000
 
 let handler = async (m, {conn, isPrems }) => {
@@ -8,11 +8,10 @@ let handler = async (m, {conn, isPrems }) => {
   if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `*❐┃تعال بكرا خذ هديتك┃😒❯*\n\n🕚الوقت المتبقي : 
   *${msToTime(time - new Date())}* `
   global.db.data.users[m.sender].exp += isPrems ? prem : free
-  m.reply(`*◄────⍆☾🎁☽⍅────►*
-⌘ *هدية يومية*
-▢ *لقد تلقيت:*
-🆙 *XP* : +${isPrems ? prem : free}
-*◄────⍆☾🎁☽⍅────►*`)
+  m.reply(`╮━─━═⟐❪╰هـدية╮❫⟐═━─━╭
+*▢ هـديـة يـومـيـا🎁*
+*▢* جـائـزتـك *:* *EXP* : +${isPrems ? prem : free}
+╯━───━═⟐ ❈ ⟐═━───━╰`)
   global.db.data.users[m.sender].lastclaim = new Date * 1
 }
 handler.help = ['daily']
