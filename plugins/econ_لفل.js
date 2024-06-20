@@ -14,20 +14,21 @@ const handler = async (m, { conn }) => {
   if (!canLevelUp(user.level, user.exp, global.multiplier)) {
     const { min, xp, max } = xpRange(user.level, global.multiplier);
     const message = `
-${tradutor.texto1[0]}
+⏣‏╞•━═⟐ ❪╰𝐑𝐀𝐍𝐊╮❫ ⟐═━•╡⏣
 ${tradutor.texto1[1]} ${usertag}
 ${tradutor.texto1[2]} ${user.level}
 ${tradutor.texto1[3]} ${user.role}
 ${tradutor.texto1[4]} ${user.exp - min}/${xp} XP
-⏣╞═━──━═⬣❈⬣═━──━═╡⏣
-${tradutor.texto1[5]} ${max - user.exp} ${tradutor.texto1[6]}`.trim();
+      ──━━━══⟐══━━━──
+${tradutor.texto1[5]} ${max - user.exp} ${tradutor.texto1[6]}
+⏣╞•━──━═⟐ ❈ ⟐═━──━•╡⏣`.trim();
     return conn.sendMessage(m.chat, {text: message, mentions: [m.sender]}, {quoted: m});
   }
   const before = user.level * 1;
   while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++;
   if (before !== user.level) {
     const levelUpMessage = `${tradutor.texto2[0]} ${name}! ${tradutor.texto2[1]} ${user.level}`;
-    const levelUpDetails = `
+    const levelUpDetails = `❐┃تمت زيادة مستواك، مبروك┃🚀❯
 ${tradutor.texto3[0]}
 ${tradutor.texto3[1]} ${before}
 ${tradutor.texto3[2]} ${user.level}
