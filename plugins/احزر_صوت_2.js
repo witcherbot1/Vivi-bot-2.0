@@ -18,7 +18,8 @@ const handler = async (m, {conn, usedPrefix}) => {
   const res = await fetchJson(`https://gist.githubusercontent.com/Brook-88/6fd1ec8ec4d33a7c0e6cdd264d4b2ca2/raw/75c1120ee8b71b9af72124c02ceef9fae0c09a1d/%25D8%25A7%25D8%25B5%25D9%2588%25D8%25A7%25D8%25AA%2520%25D8%25A7%25D9%2584%25D8%25B4%25D8%25AE%25D8%25B5%25D9%258A%25D8%25A7%25D8%25AA`);
   const json = res[Math.floor(Math.random() * res.length)];
   const caption = `╮─┈〈 *تخمين الشخصية👤*〉┈─⟐
-${tradutor.texto2[0]}*▢❯* الوقت : *${(timeout / 1000).toFixed(2)}* ثانيه 
+${tradutor.texto2[0]}
+*▢❯* الوقت : *${(timeout / 1000).toFixed(2)}* ثانيه 
 *▢❯* الجائزة : *${poin}* EXP
 *▢❯* اكتب : *".غش"* لمعرفة الاجابة
 *▢❯* الرد على هذه الرسالة مع الاجابة!
