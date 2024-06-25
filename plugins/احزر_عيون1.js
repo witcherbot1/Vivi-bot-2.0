@@ -1,10 +1,10 @@
 let timeout = 60000
 let poin = 1000
 let handler = async (m, { conn, command, usedPrefix }) => {
-    conn.Vivieyes = conn.Vivieyes ? conn.Vivieyes : {}
+    conn.vivieyes = conn.vivieyes ? conn.vivieyes : {}
     let id = m.chat
-    if (id in conn.Vivieyes) {
-        conn.reply(m.chat, '❐┃لم يتم الاجابة على السؤال بعد┃❌ ❯', conn.Vivieyes[id][0])
+    if (id in conn.vivieyes) {
+        conn.reply(m.chat, '❐┃لم يتم الاجابة على السؤال بعد┃❌ ❯', conn.vivieyes[id][0])
         throw false
     }
     let src = await (await fetch('https://raw.githubusercontent.com/Brook-88/Game/main/game-eyes.json')).json()
@@ -15,12 +15,12 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 *▢❯* الجائزة : *${poin}* EXP
 *▢❯* الرد على هذه الرسالة مع الاجابة!
 ╯┈──┈┈─┈┈┈┈──┈┈─┈⟐`.trim()
-    conn.Vivieyes[id] = [
+    conn.vivieyes[id] = [
         await conn.sendFile(m.chat, json.img, '', caption, m),
         json, poin,
         setTimeout(() => {
-            if (conn.Vivieyes[id]) conn.reply(m.chat, `❮ ⌛┇انتهى الوقت┇⌛❯\n\n❐┇الاجـابـة✅↞ ${json.name}┇`, conn.Vivieyes[id][0])
-            delete conn.Vivieyes[id]
+            if (conn.vivieyes[id]) conn.reply(m.chat, `❮ ⌛┇انتهى الوقت┇⌛❯\n\n❐┇الاجـابـة✅↞ ${json.name}┇`, conn.vivieyes[id][0])
+            delete conn.vivieyes[id]
         }, timeout)
     ]
 }
