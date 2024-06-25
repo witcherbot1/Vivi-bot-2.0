@@ -5,8 +5,6 @@ export async function before(m) {
     if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !m.text || !/.استسلم|مدري/i.test(m.quoted.text) || /.hhint/i.test(m.text))
         return !0
     this.vivieyes = this.vivieyes ? this.vivieyes : {}
-    if (!(id in this.vivieyes))
-        return this.reply(m.chat, '*❐┃ انـتـهـت الـلـعـبـة ┃❗ ❯*', m)
     if (m.quoted.id == this.vivieyes[id][0].id) {
         let isSurrender = /^(استسلم|مدري)$/i.test(m.text)
         if (isSurrender) {
