@@ -1185,10 +1185,10 @@ export async function handler(chatUpdate) {
         if (!('autoread' in settings)) settings.autoread = false;
         if (!('autoread2' in settings)) settings.autoread2 = false;
         if (!('restrict' in settings)) settings.restrict = false;
-        if (!('antiCall' in settings)) settings.antiCall = false;
-        if (!('antiPrivate' in settings)) settings.antiPrivate = false;
+        if (!('antiCall' in settings)) settings.antiCall = true;
+        if (!('antiPrivate' in settings)) settings.antiPrivate = true;
         if (!('modejadibot' in settings)) settings.modejadibot = true;
-        if (!('antispam' in settings)) settings.antispam = false;
+        if (!('antispam' in settings)) settings.antispam = true;
         if (!('audios_bot' in settings)) settings.audios_bot = true;
         if (!('modoia' in settings)) settings.modoia = false;
       } else {
@@ -1197,10 +1197,10 @@ export async function handler(chatUpdate) {
           autoread: false,
           autoread2: false,
           restrict: false,
-          antiCall: false,
-          antiPrivate: false,
+          antiCall: true,
+          antiPrivate: true,
           modejadibot: true,
-          antispam: false,
+          antispam: true,
           audios_bot: true,
           modoia: false
         };
