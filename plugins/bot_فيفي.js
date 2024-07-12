@@ -1,46 +1,60 @@
-import _0x3ec5fb from 'node-fetch';
-import _0xdcffbe from '../lib/uploadImage.js';
-let handler = async (_0x4f9075, {
-  text: text,
-  conn: conn,
-  usedPrefix: usedPrefix,
-  command: command
-}) => {
-  if (!text && !(_0x4f9075.quoted && _0x4f9075.quoted.text)) {
-    // Fix Arabic error message
-    throw `*❐┃صيغة غير صالحة┃❗❯*
- *▢* يجب عليك طرح سؤالك للاجابة
+import fetch from 'node-fetch';
+import fs from 'fs';
+import uploader from '../lib/uploadImage.js';
 
- *◄* مثال لاستخدام الامر *:*
- ↞ *.فيفي كيف طريقة تحضير الشكشوكه*`;
-  }
-  try {
-    const encodedText = encodeURIComponent(text);
-    let attachment = null;
-    let mediaURL = '';
-    let quotedMessage = _0x4f9075.quoted ? _0x4f9075.quoted : _0x4f9075;
-    if ((quotedMessage.msg || quotedMessage).mimetype || quotedMessage.mediaType || '') {
-      let mimeType = (quotedMessage.msg || quotedMessage).mimetype || quotedMessage.mediaType || '';
-      if (mimeType.startsWith('video/')) {
-        return _0x4f9075.reply("*❐┃الرد على الصورة فقط┃❗❯*");
+const handler = async (m, {conn, text, command}) => {
+  const datas = global;
+  const idioma = datas.db.data.users[m.sender].language;
+  const _translate = JSON.parse(fs.readFileSync(`./language/ar.json`));
+  const tradutor = _translate.BK9.BK9;
+
+  if (command === 'تخيل') {
+    if (!text) throw `${tradutor.bk9dalletext}`;
+
+    await conn.sendMessage(m.chat, {text: tradutor.bk9dallewait}, {quoted: m});
+
+    try {
+      const BK9 = `https://api.bk9.site/ai/photoleap?q=${encodeURIComponent(text)}`;
+      const response = await fetch(BK9);
+      const result = await response.json();
+
+      if (result.status) {
+        await conn.sendMessage(m.chat, {image: {url: result.BK9}}, {quoted: m});
       }
-      attachment = await quotedMessage.download();
-      let isImage = /image\/(png|jpe?g|gif)/.test(mimeType);
-      mediaURL = await (isImage ? _0xdcffbe : _0xdcffbe)(attachment);
+    } catch (error) {
+      throw `${tradutor.bk9dalleerr}`;
     }
-    const endpointURL = mediaURL ? "https://api-darkman-3cf8c6ef66b9.herokuapp.com/googlegenai?query=" + encodedText + "&url=" + mediaURL : "https://api-darkman-3cf8c6ef66b9.herokuapp.com/googlegenai?query=" + encodedText + "&url=";
-    conn.sendPresenceUpdate("composing", text.chat);
-    const response = await _0x3ec5fb(endpointURL);
-    const result = await response.json();
-    const output = result.result;
-    _0x4f9075.reply(output);
-  } catch (error) {
-    console.error("Error:", error);
-    // Fix Arabic error message
-    throw "*❐┃حدثت مشكله┃❗❯*";
+  } else if (command === 'فيفي') {
+    if (!text) throw `${tradutor.bk9text}`;
+
+    try {
+      conn.sendPresenceUpdate('composing', m.chat);
+      const BK9api = `https://api.bk9.site/ai/gpt4?q=${encodeURIComponent(text)}`;
+      const BK99 = await fetch(BK9api);
+      const BK8 = await BK99.json();
+      if (BK8.status && BK8.BK9) {
+        const respuestaAPI = BK8.BK9;
+        conn.reply(m.chat, respuestaAPI, m);
+      } else {
+        throw `${tradutor.bk9err}`;
+      }
+    } catch (error) {
+      throw `${tradutor.bk9err}`;
+    }
+  } else if (command === 'بحث') {
+    let BK7 = m.quoted ? m.quoted : m;
+    let BK8 = (BK7.msg || BK7).mimetype || BK7.mediaType || '';
+    if (/image/g.test(BK8) && !/webp/g.test(BK8)) {
+      let BK0 = await BK7.download();
+      let BK9img = await uploader(BK0);
+      let BK9api = await (await fetch(`https://api.bk9.site/ai/geminiimg?url=${BK9img}&q=${text}`)).json();
+      conn.sendMessage(m.chat, { text: BK9api.BK9 }, { quoted: m });
+    } else {
+      throw `${tradutor.bk9imgtext}`;
+    }
   }
 };
-handler.help = ["googlegenai"];
-handler.tags = ['AI'];
-handler.command = ["فيفي", "vivi"];
+
+handler.command = ['تخيل', 'فيفي', 'بحث'];
+handler.tags = ['ai'];
 export default handler;
