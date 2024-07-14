@@ -10,10 +10,10 @@
 ▢ ${tradutor.texto1[1]}`;
 
   const img = 'https://telegra.ph/file/037ef8a889c823ee566e6.jpg';
-  const diamond = Math.floor(Math.random() * 100);
-  const tok = Math.floor(Math.random() * 10);
-  const mystic = Math.floor(Math.random() * 4000);
-  const expp = Math.floor(Math.random() * 20000);
+  const diamond = Math.floor(Math.random() * 400);
+  const tok = Math.floor(Math.random() * 50);
+  const mystic = Math.floor(Math.random() * 7000);
+  const expp = Math.floor(Math.random() * 50000);
 
     (global.db.data.users[m.sender].diamond += diamond);
   global.db.data.users[m.sender].money += mystic;
