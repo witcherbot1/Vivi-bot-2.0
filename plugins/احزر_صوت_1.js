@@ -12,7 +12,7 @@ const handler = {
 
 
     const id = m.chat;
-    if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/‏/i.test(m.quoted.text)) return !0;
+    if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/./i.test(m.quoted.text)) return !0;
     this.tebaklagu = this.tebaklagu ? this.tebaklagu : {};
     if (!(id in this.tebaklagu)) return m.reply(tradutor.texto1);
     if (m.quoted.id == this.tebaklagu[id][0].id) {
@@ -20,13 +20,12 @@ const handler = {
       if (m.text.toLowerCase() == json.jawaban.toLowerCase().trim()) {
         global.db.data.users[m.sender].exp += this.tebaklagu[id][2];
         m.reply(`*❐┃اجـابـة صـحـيـحـة┃✅ ❯*
-        
-❐┇الـجـائـزة💰↞ ${this.tebaklagu[id][2]}+ XP
-`);
+
+*❐┇الـجـائـزة💰↞${this.tebaklagu[id][2]} EXP*`);
         clearTimeout(this.tebaklagu[id][3]);
         delete this.tebaklagu[id];
       } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) m.reply(`*❐┃قـريـب جـدااا┃🫣❯*`);
-      else m.reply(tradutor.texto2);
+      else m.reply('*❐┃اجـابـة خـاطـئـة┃❌❯*');
     }
     return !0;
   },
